@@ -1,4 +1,12 @@
-#Punto A (Insertar los datos de tabla creador y en la tabla Personajes)
+/*
+Abrir el script llamado “superhéroes” y ejecutarlo de modo tal que se cree la base de
+datos y todas sus tablas. Posteriormente, crear las tablas que se muestran en el
+siguiente modelo de entidad relación:
+*/
+
+USE superheroes;
+
+-- A) Insertar los datos de tabla creador y en la tabla Personajes
 
 INSERT INTO creador (nombre) VALUES
 ("Marve"),
@@ -18,5 +26,21 @@ INSERT INTO personajes VALUES(11,'Bruce Wayne','Batman',170, '500',32,47,1939,'H
 INSERT INTO personajes VALUES(12,'Clark Kent','Superman',165, 'infinita',120,182,1948,'Reportero',2);
 INSERT INTO personajes VALUES(13,'Diana Prince','Mujer Maravilla',160, 'infinita',95,127,1949,'Princesa guerrera',2);
 
-#Punto B
+/*
+B) Cambiar en la tabla personajes el año de aparición a 1938 del personaje Superman.
+A continuación, realizar un listado de toda la tabla para verificar que el personaje
+haya sido actualizado.
+*/
+
 UPDATE personajes SET aparicion=1938 WHERE id_personaje=12;
+
+/*
+C) Eliminar el registro que contiene al personaje Flash. A continuación, mostrar toda la tabla
+para verificar que el registro haya sido eliminado.
+*/
+DELETE FROM personajes WHERE id_personaje = 10;
+
+/*
+-- D) Eliminar la base de datos superhéroes.
+*/
+DROP DATABASE superheroes;
